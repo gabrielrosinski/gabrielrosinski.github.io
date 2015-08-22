@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace openweathermap
 {
-   static class WeatherDataServiceFactory
+   static public class WeatherDataServiceFactory
     {
         static public string OPEN_WEATHER_MAP = "open_weather_map";
 

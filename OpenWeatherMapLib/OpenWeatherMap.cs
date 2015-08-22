@@ -28,18 +28,30 @@ namespace openweathermap
 
         public WeatherData getWeatherData(Location location)
         {
+
             if (location._city_id != null)
             {
-                return ProcessResponse(RequestOpenWeather.BuildCompleteRequestStringForCityDataById(location._city_id,
+                WeatherData return_weather_data_cityId =  ProcessResponse(RequestOpenWeather.BuildCompleteRequestStringForCityDataById(location._city_id,
                                                                                              _doc_format.xml.ToString(),
-                                                                                             _mode_format.metric.ToString()), _mode_format.metric);
+                                                                                             _mode_format.metric.ToString()),
+                                                                                             _mode_format.metric);
+
+                if (return_weather_data_cityId == null) throw new WeatherDataServiceException("No data was fetch by ProcessResponse function using city ID");
+
+                return return_weather_data_cityId;
+
             }
             else
             {
-             
-                return ProcessResponse(RequestOpenWeather.BuildCompleteRequestStringForCityDataByName(location._city_name,
+                
+                WeatherData return_city_data_city_name = ProcessResponse(RequestOpenWeather.BuildCompleteRequestStringForCityDataByName(location._city_name,
                                                                                                _doc_format.xml.ToString(),
-                                                                                               _mode_format.metric.ToString()), _mode_format.metric);
+                                                                                               _mode_format.metric.ToString()),
+                                                                                               _mode_format.metric);
+
+                if (return_city_data_city_name == null) throw new WeatherDataServiceException("No data was fetch by ProcessResponse function using city name");
+
+                return return_city_data_city_name;
             }
         }
 
@@ -53,6 +65,7 @@ namespace openweathermap
             if (format == _mode_format.metric)
             {
                 XElement processingXml = XElement.Load(locationsResponse);
+                if (processingXml == null) { return null; }
 
                 IEnumerable<XElement> country =
                 from element in processingXml.Descendants("temperature")
@@ -87,26 +100,6 @@ namespace openweathermap
             return null;
         }
 
-        //IEnumerable<XElement> items =
-        //    from el in po.Descendants("city")
-        //    select el;
-        //foreach (XElement prdName in items)
-        //{
-        //IEnumerable<XAttribute> listOfAttributes =
-        //from att in prdName.Attributes()
-        //select att;
-        //foreach (XAttribute a in listOfAttributes)
-        //    Console.WriteLine(a);
-        //_city_name = prdName.FirstAttribute.Value;
-        //_city_id = prdName.LastAttribute.Value;
-
-
-        //IEnumerable<XElement> country =
-        //from el in po.Descendants("temperature")
-        //select el;
-        //foreach (XElement nameCtr in country)
-        //    Console.WriteLine(nameCtr.Name);
-        //  _country_name = nameCtr.Value;
 
     }
 }

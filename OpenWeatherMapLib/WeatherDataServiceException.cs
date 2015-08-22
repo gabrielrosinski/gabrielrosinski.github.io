@@ -7,6 +7,7 @@ namespace openweathermap
 {
     class WeatherDataServiceException : Exception
     {
-
+        public WeatherDataServiceException(string message)
+        : base(message) { }
     }
 }

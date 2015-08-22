@@ -11,8 +11,9 @@ namespace openweathermaptest
     {
         static void Main(string[] args)
         {
-            Location newlocation = new Location("london");
+            Location newlocation = new Location("Israel");
             IWeatherDataService open_map_weather = WeatherDataServiceFactory.getWeatherDataService(WeatherDataServiceFactory.OPEN_WEATHER_MAP);
+
             WeatherData opachki = open_map_weather.getWeatherData(newlocation);
         }
     }
@@ -21,9 +22,8 @@ namespace openweathermaptest
 
 
 ///////Things to do
-//1. it need to excepts location
-//2. it need to except const that defines the service he wants 
-//3. add unit test
+//1. it need to excepts location                                  - done
+//2. add unit test
 
 //make it a package separately from the test program
 //make git hub account and commit it                              - done

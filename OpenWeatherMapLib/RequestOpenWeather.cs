@@ -8,7 +8,7 @@ using System.Xml;
 
 namespace openweathermap
 {
-    class RequestOpenWeather
+    public class RequestOpenWeather
     {
         public static string BuildCompleteRequestStringForCityDataByName(string city_name, string format, string mode)
         {
