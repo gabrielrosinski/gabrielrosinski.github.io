@@ -26,6 +26,14 @@ namespace openweathermap
             //Console.WriteLine(value + " " + min + " " + max + " " + unit);
 
         }
-     
+
+
+        public void printAllCached()
+        {
+            Console.WriteLine("Temperature : " + value_temperatur + " Min Temperature : "
+                               + min_temperatur + " Max Temperature : " + max_temperatur
+                               + " Metric used " + unit_used_temperatur);
+        }
+
     }
 }
