@@ -13,24 +13,24 @@
 		</nav>
 		<div class="container">
     		<div class="blurb">
-        		<h1>Hi there, I'm Hank Quinlan!</h1>
-				<p>Use OpenWeatherMapLib.dll to get functionality of the openweathermap library. 
-Basic usage :
-Add to your project Reference to OpenWeatherMapLib.dll and type 
-using openweathermap;
-Basic application:
-Location newlocation = new Location("London");
+        		<h1>Open weather map wrapper</h1>
+				<p>Use OpenWeatherMapLib.dll to get functionality of the openweathermap library. </p>
+				<p>    Basic usage :</p>
+			           <p> Add to your project Reference to OpenWeatherMapLib.dll and type </p>
+			            <p>using openweathermap;</p>
+			<p>		Basic application:</p>
+			<p>		Location newlocation = new Location("London");</p>
 
-IWeatherDataService open_map_weather = WeatherDataServiceFactory.getWeatherDataService(WeatherDataServiceFactory.OPEN_WEATHER_MAP);
+			<p>		IWeatherDataService open_map_weather = WeatherDataerviceFactory.getWeatherDataService(WeatherDataServiceFactory.OPEN_WEATHER_MAP);</p>
 
-WeatherData opachki = open_map_weather.getWeatherData(newlocation);
-            opachki.printAllCached();
+			<p>		WeatherData opachki = open_map_weather.getWeatherData(newlocation);</p>
+            		<p>	        opachki.printAllCached();</p>
 
-Creating a Location object you can give it a name of the city or a city id in the construction.
-By now IWeatherDataService interface have only one function : getWeatherData which return the WeatherData object.
-WeatherData object will hold information about Temperature of the give City and format of their representation. 
-By now only one Class implement IWeatherDataService, OpenWeatherMan. 
-WeatherDataServiceFactory returns a OpenWeatherMan object if asked to create one.</a></p>
+			<p>		Creating a Location object you can give it a name of the city or a city id in the construction.</p>
+			<p>		By now IWeatherDataService interface have only one function : getWeatherData which return the WeatherData object.</p>
+			<p>		WeatherData object will hold information about Temperature of the give City and format of their representation. </p>
+			<p>		By now only one Class implement IWeatherDataService, OpenWeatherMan. </p>
+			<p>		WeatherDataServiceFactory returns a OpenWeatherMan object if asked to create one.</a></p>
     		</div><!-- /.blurb -->
 		</div><!-- /.container -->
 		<footer>
