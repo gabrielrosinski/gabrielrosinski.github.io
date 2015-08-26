@@ -9,10 +9,10 @@ namespace openweathermap
     public class WeatherData
     {
 
-        private string value_temperatur;
-        private string min_temperatur;
-        private string max_temperatur;
-        private string unit_used_temperatur;
+        public string value_temperatur { get; set; }
+        public string min_temperatur { get; set; }
+        public string max_temperatur { get; set; }
+        public string unit_used_temperatur { get; set; }
 
         public WeatherData(string value) : this(value, null, null, null) { }
         public WeatherData(string value, string min) : this(value, min, null, null) { }

@@ -16,6 +16,7 @@ namespace openweathermaptest
 
             WeatherData opachki = open_map_weather.getWeatherData(newlocation);
             opachki.printAllCached();
+            Console.WriteLine(" Max temp " + opachki.max_temperatur + " Min temp " + opachki.min_temperatur + " temp " + opachki.value_temperatur);
         }
     }
 }
